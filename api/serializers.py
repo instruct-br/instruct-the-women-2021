@@ -29,5 +29,8 @@ class ProjectSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         # TODO
         # Salvar o projeto e seus pacotes associados.
+        #
+        # Referência para uso de models do Django:
+        # https://docs.djangoproject.com/en/3.2/topics/db/models/
         packages = validated_data["packages"]
         return Project(name=validated_data["name"])

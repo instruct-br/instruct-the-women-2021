@@ -1,5 +1,11 @@
 import requests
 
+# Referências sobre o uso do requests:
+#
+# Fazendo requisições:
+# https://docs.python-requests.org/en/master/user/quickstart/#make-a-request
+# Usando JSON retornado:
+# https://docs.python-requests.org/en/master/user/quickstart/#json-response-content
 
 def version_exists(package_name, version):
     # TODO
