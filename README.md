@@ -1,6 +1,6 @@
-# Teste Instruct The Women 👩‍💻
+# Exercício Instruct The Women 👩‍💻
 
-Neste repositório você encontra o enunciado do teste técnico para a vaga de
+Neste repositório você encontra o enunciado do exercício técnico para a vaga de
 trainee do programa [Instruct The Women](https://instruct.com.br/trabalhe-com-a-gente/instruct-the-women/) organizado pela [Instruct](https://instruct.com.br/) em
 parceria com a [Se Candidate, Mulher!](https://secandidatemulher.com.br/).
 
@@ -11,6 +11,10 @@ Para saber mais sobre a empresa, leia o [FAQ](#FAQ)
 A equipe de desenvolvimento _Bleeding Edge Enthusiasts_ (BEE) se orgulha de 
 usar as tecnologias mais recentes e modernas. Essa regra também se aplica aos
 projetos desenvolvidos em Python pela equipe BEE.
+
+Quando uma funcionalidade não existe nativamente no interpretador Python, a equipe
+faz uso dos chamados **pacotes**. De maneira simples, um pacote é um conjunto de
+códigos prontos para serem usados por qualquer pessoa e que facilitam o desenvolvimento.
 
 Para garantir que todos seus projetos em Python estão usando as últimas versões
 disponíves dos pacotes, a equipe pensou em criar uma ferramenta batizada de 
@@ -24,8 +28,10 @@ poderia ser usada para esse fim.
 ## Solução
 
 Você deve desenvolver a MagPy, uma API REST que gerencia uma coleção de 
-projetos. Cada projeto tem um nome e uma lista de pacotes. Cada pacote tem um 
-nome e uma versão.
+projetos, sendo:
+
+* Cada projeto tem um nome e uma lista de pacotes.
+* Cada pacote tem um nome e uma versão.
 
 O cadastro de um projeto recebe o nome e a lista de pacotes. Cada pacote da 
 lista precisa obrigatoriamente especificar um nome, mas a versão é opcional.
@@ -133,25 +139,34 @@ comando `./manage.py test`.
 
 ## Ambiente de Desenvolvimento
 
-Primeiro crie um Fork deste repositório.
+Primeiro, crie um Fork deste repositório. Leia a [documentação do GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo) para saber mais.
 
-### Browser
+### Usando o browser (recomendado)
 
 Você pode desenvolver essa API em um ambiente de desenvolvimento 
-pré-configurado direto no seu browser. Basta clicar no botão abaixo:
+pré-configurado direto no seu browser.
+
+Depois de fazer o fork, basta clicar no botão abaixo:
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-Será necessário criar uma conta gratuita no gitpod.io.
+Será necessário criar uma conta gratuita no gitpod.io usando sua conta do GitHub.
 
-### Seu computador
+### Usando seu computador (avançado)
 
-Se preferir, também é possível clonar este repositório git no seu computador e
-desenvolver em ambiente local. Os requisitos são:
+Se você não tem experiência prévia configurando ambientes de desenvolvimento,
+use o gitpod.io pelo browser para economizar tempo.
+
+Caso já tenha experiência, também é possível clonar este repositório git no
+seu computador e desenvolver em ambiente local. Os requisitos são:
 
 - Python 3.8
 - pipenv
 - Bibliotecas de desenvolvimento para PostgreSQL (libpq-dev)
+
+Você vai precisar também do [k6](https://k6.io/) para testar seu projeto. Para instalar o k6
+basta [baixar o binário](https://github.com/loadimpact/k6/releases) para o seu
+sistema operacional (Windows, Linux ou Mac).
 
 E para fazer o deploy quando terminar, é necessário instalar o [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
 
@@ -159,27 +174,36 @@ Se você está num computador com Windows, é recomendado
 [seguir o tutorial da Microsoft](https://docs.microsoft.com/en-us/windows/python/web-frameworks)
 para configurar um ambiente de desenvolvimento com WSL.
 
-Se você não tem experiência prévia configurando ambientes de desenvolvimento,
-use o gitpod pelo browser para economizar tempo.
+## Validando seu projeto
 
-## Deploy
+Nesse exercício incluímos testes usando a ferramenta [k6](https://k6.io/). Com ela é possível
+testar o comportamento da API e validar se tudo está funcionando de acordo com
+a especificação.
+
+Os testes básicos estão disponíveis neste repositório no arquivo
+`tests-open.js`. Use-os durante o desenvolvimento para avaliar se a sua API está correta.
+
+Para rodar os testes, especifique a variável de ambiente "API_BASE"
+com o endereço base da API testada e no editor do gitpod.io, abra um novo
+terminal para executar o comando abaixo.
+
+Exemplo de aplicação rodando no localhost na porta 8000:
+```
+k6 run -e API_BASE='http://localhost:8000/' tests-open.js
+```
+
+## Fazendo deploy
 
 1. Crie uma conta gratuita no [Heroku](https://signup.heroku.com/)
 2. Na página [Account Settings](https://dashboard.heroku.com/account) role até "API Key" e clique em "reveal"
-3. No terminal autentique-se com `heroku login -i` digite o e-mail da sua conta. No lugar da senha, digite o valor que você conseguiu no passo 2.
-4. No terminal digite `heroku create` para criar sua aplicação
-5. No terminal digite `git push heroku` para fazer o deploy
-6. No [dashboard do Heroku](https://dashboard.heroku.com/apps) entre no app que foi criado pelo passo anterior
-7. Na aba "Access" clique em "Add collaborator" e preencha com o e-mail `jobs@instruct.com.br`
+3. No editor do gitpod.io, abra um novo Terminal.
+4. Autentique-se com `heroku login -i` digite o e-mail da sua conta. No lugar da senha, digite o valor que você conseguiu no passo 2.
+5. No terminal digite `heroku create` para criar sua aplicação
+6. No terminal digite `git push heroku` para fazer o deploy
+7. No [dashboard do Heroku](https://dashboard.heroku.com/apps) entre no app que foi criado pelo passo anterior
+8. Na aba "Access" clique em "Add collaborator" e preencha com o e-mail `jobs@instruct.com.br`
 
-Pronto! Seu projeto foi publicado e a Instruct tem acesso para corrigí-lo.
-## Avaliação
-
-Num primeiro momento não olharemos o seu código. O projeto será testado de 
-forma automatizada pra checar se implementa a API especificada acima.
-
-Você deve codificar seu projeto em Python e fazer deploy usando os recursos 
-disponibilizados nos _Frees Tiers_ da [Heroku](https://www.heroku.com/).
+Pronto! Seu projeto foi publicado e a Instruct tem acesso para avaliá-lo!
 
 Quando finalizar a implementação, adicione o usuário com e-mail
 `jobs@instruct.com.br` como colaborador do app publicado até o fim do prazo
@@ -189,39 +213,18 @@ para seguir com os testes automatizados.
 | ⚠️ | Você deve adicionar o usuário com e-mail `jobs@instruct.com.br` no app publicado no Heroku! Não é necessário adicionar acesso ao código fonte num repositório do GitHub. |
 | --- | --- |
 
+Se você conseguiu chegar até aqui, parabéns!
+
+## Avaliação (opcional)
+
+Caso você tenha feito o deploy no Heroku com sucesso, poderemos avaliar seu código!
+
 Nós executaremos dois conjuntos de testes na sua API:
 
-1. Testes básicos (abertos)
+1. Testes básicos (iguais aos que estão no repositório usando `k6`)
 2. Testes avançados (fechados)
 
-Se a API não passar nos testes básicos, faremos mais duas tentativas. Se
-mesmo assim ela não passar nos testes básicos nós encerramos os testes.
-
-Se a API passar nos testes básicos e não passar nos testes avançados, faremos
-mais duas tentativas. Se mesmo assim ela não passar nos testes avançados nós
-encerramos os testes.
-
-Se a API passar pelos testes avançados nós conferimos superficialmente o seu 
-código para identificar problemas; no entanto você provavelmente já garantiu a 
-sua participação na próxima etapa.
-
-Os testes básicos estão disponíveis neste repositório no arquivo
-`tests-open.js`. Use-os durante o desenvolvimento para avaliar se a sua API 
-está correta. Como explicado acima, você **não passará** para a próxima etapa 
-se a sua solução não atender todos os testes desse arquivo. 
-**Use os testes para guiar o desenvolvimento da solução.**
-
-Você pode executar esses testes com o [k6](https://k6.io/). Para instalar o k6
-basta [baixar o binário](https://github.com/loadimpact/k6/releases) para o seu
-sistema operacional (Windows, Linux ou Mac).
-
-Para rodar os testes abertos, especifique a variável de ambiente "API_BASE"
-com o endereço base da API testada.
-
-Exemplo de aplicação rodando no localhost na porta 8080:
-```
-k6 run -e API_BASE='http://localhost:8080/' tests-open.js
-```
+Sua API deve passar ao menos nos testes básicos para avaliarmos.
 
 **Boa sorte!**
 
@@ -236,7 +239,7 @@ As inscrições são feitas através das vagas publicadas no site: https://instr
 Nessa página estão listadas as vagas abertas e todos os detalhes de nosso
 processo seletivo.
 
-### Como ser avisado de novas vagas?
+### Como ser avisada de novas vagas?
 
 [Siga a Instruct no Linkedin](https://www.linkedin.com/company/instructbr).
 
