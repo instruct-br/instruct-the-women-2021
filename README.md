@@ -133,10 +133,6 @@ desenvolvida.
 Em `api/serializers.py` falta implementar a persistência dos dados e usar
 as funções criadas em `api/pypi.py` para a validar os dados.
 
-O projeto vem com alguns testes automatizados, que você pode usar durante o
-desenvolvimento para checar se está no caminho certo. Rode os testes com o
-comando `./manage.py test`.
-
 ## Ambiente de Desenvolvimento
 
 Primeiro, crie um Fork deste repositório. Leia a [documentação do GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo) para saber mais.
