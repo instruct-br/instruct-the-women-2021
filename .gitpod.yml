@@ -6,6 +6,7 @@ tasks:
   - init: |
       pipenv install --system
       ./manage.py migrate
+      ./manage.py create_api_user
     command: ./manage.py runserver 0.0.0.0:8000
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
