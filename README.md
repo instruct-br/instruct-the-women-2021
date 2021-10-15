@@ -6,6 +6,79 @@ parceria com a [Se Candidate, Mulher!](https://secandidatemulher.com.br/).
 
 Para saber mais sobre a empresa, leia o [FAQ](#FAQ)
 
+## Requisitos
+
+* Possuir uma conta no GitHub
+* Navegador Chrome ou Firefox
+* Familiaridade com VS Code
+
+## O que é importante você saber
+
+* Conhecer HTTP e APIs Rest
+* Saber sobre métodos HTTP como GET, POST e DELETE
+* Conhecer sobre JSON e estruturas como listas e dicionários (*Arrays* e *Objects*)
+
+## Ambiente de Desenvolvimento
+
+Para esse exercício vamos utilizar um ambiente totalmente no browser e que não
+requer nenhuma instalação em seu computador.
+
+É possível fazer o exercício localmente no seu computador. Nesse caso, a configuração
+de ferramentas para desenvolvimento é de sua responsabilidade e não temos como ajudar
+todas as participantes.
+
+### Faça um fork
+
+Primeiro, crie um fork deste repositório com sua conta no GitHub.
+
+Em termos simples, um fork é cópia de um repositório. Leia a
+[documentação do GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
+para saber mais.
+
+A partir de agora, todas as ações devem ser feitas no seu fork!
+
+Ele estará disponível dessa forma: `https://github.com/SEU_LOGIN/instruct-the-women-2021`
+
+### Usando o browser (recomendado)
+
+Abra o seu fork em uma aba do seu browser.
+
+Você estará na **sua cópia** do repositório original.
+
+Então, na **sua cópia** do repositório aberta, clique no botão abaixo:   
+
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
+
+Você será redirecionada para o gitpod.io e será necessário criar uma conta gratuita usando sua conta do GitHub.
+
+Uma janela será aberta solicitando que você autorize o gitpod.io a acessar sua conta do GitHub.
+
+Após a confirmação da solicitação de autorização, uma instância do VS Code será criada para você.
+
+Aguarde alguns instantes, cerca de 2 a 3 minutos até o término do carregamento do ambiente.
+
+### Usando seu computador (avançado)
+
+| ⚠️ | Não temos como ajudar caso a caso as participantes na configuração de um ambiente de desenvolvimento. Se você não se sentir segura, use o ambiente pronto no browser que preparamos. |
+| --- | --- |
+
+Caso já tenha experiência, também é possível clonar este repositório git no
+seu computador e desenvolver em ambiente local. Os requisitos são:
+
+- Python 3.8
+- pipenv
+- Bibliotecas de desenvolvimento para PostgreSQL (libpq-dev)
+
+Você vai precisar também do [k6](https://k6.io/) para testar seu projeto. Para instalar o k6
+basta [baixar o binário](https://github.com/loadimpact/k6/releases) para o seu
+sistema operacional (Windows, Linux ou Mac).
+
+E para fazer o deploy quando terminar, é necessário instalar o [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+
+Se você está num computador com Windows, é recomendado 
+[seguir o tutorial da Microsoft](https://docs.microsoft.com/en-us/windows/python/web-frameworks)
+para configurar um ambiente de desenvolvimento com WSL.
+
 ## O problema
 
 A equipe de desenvolvimento _Bleeding Edge Enthusiasts_ (BEE) se orgulha de 
@@ -132,43 +205,6 @@ desenvolvida.
 
 Em `api/serializers.py` falta implementar a persistência dos dados e usar
 as funções criadas em `api/pypi.py` para a validar os dados.
-
-## Ambiente de Desenvolvimento
-
-Primeiro, crie um Fork deste repositório. Leia a [documentação do GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo) para saber mais.
-
-### Usando o browser (recomendado)
-
-Você pode desenvolver essa API em um ambiente de desenvolvimento 
-pré-configurado direto no seu browser.
-
-Depois de fazer o fork, basta clicar no botão abaixo:
-
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
-
-Será necessário criar uma conta gratuita no gitpod.io usando sua conta do GitHub.
-
-### Usando seu computador (avançado)
-
-Se você não tem experiência prévia configurando ambientes de desenvolvimento,
-use o gitpod.io pelo browser para economizar tempo.
-
-Caso já tenha experiência, também é possível clonar este repositório git no
-seu computador e desenvolver em ambiente local. Os requisitos são:
-
-- Python 3.8
-- pipenv
-- Bibliotecas de desenvolvimento para PostgreSQL (libpq-dev)
-
-Você vai precisar também do [k6](https://k6.io/) para testar seu projeto. Para instalar o k6
-basta [baixar o binário](https://github.com/loadimpact/k6/releases) para o seu
-sistema operacional (Windows, Linux ou Mac).
-
-E para fazer o deploy quando terminar, é necessário instalar o [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
-
-Se você está num computador com Windows, é recomendado 
-[seguir o tutorial da Microsoft](https://docs.microsoft.com/en-us/windows/python/web-frameworks)
-para configurar um ambiente de desenvolvimento com WSL.
 
 ## Validando seu projeto
 
