@@ -204,7 +204,7 @@ API do PyPI. Essas funções serão úteis para validar os dados recebidos pela 
 desenvolvida.
 
 Em `api/serializers.py` falta implementar a persistência dos dados e usar
-as funções criadas em `api/pypi.py` para a validar os dados.
+as funções criadas em `api/pypi.py` para a validação os dados.
 
 ## Validando seu projeto
 
