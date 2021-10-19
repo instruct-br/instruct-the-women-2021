@@ -1,11 +1,9 @@
+image:
+  file: .gitpod.Dockerfile
+
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - init: |
-      mkdir ~gitpod/bin
-      curl -L https://github.com/grafana/k6/releases/download/v0.34.1/k6-v0.34.1-linux-amd64.tar.gz -o /tmp/k6-v0.34.1-linux-amd64.tar.gz
-      tar xzvf /tmp/k6-v0.34.1-linux-amd64.tar.gz --strip-components=1 -C ~gitpod/bin
-      echo 'export PATH=/home/gitpod/bin:$PATH' >> ~/.bashrc
-      npm install -g heroku
       pipenv install --system
       ./manage.py migrate
     command: ./manage.py runserver 0.0.0.0:8000
