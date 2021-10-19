@@ -17,3 +17,4 @@ ports:
 vscode:
   extensions:
     - ms-python.python
+    - eamodio.gitlens
