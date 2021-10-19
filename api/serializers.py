@@ -30,7 +30,8 @@ class ProjectSerializer(serializers.ModelSerializer):
         # TODO
         # Salvar o projeto e seus pacotes associados.
         #
-        # Referência para uso de models do Django:
-        # https://docs.djangoproject.com/en/3.2/topics/db/models/
+        # Algumas referência para uso de models do Django:
+        # - https://docs.djangoproject.com/en/3.2/topics/db/models/
+        # - https://www.django-rest-framework.org/api-guide/serializers/#saving-instances
         packages = validated_data["packages"]
         return Project(name=validated_data["name"])
