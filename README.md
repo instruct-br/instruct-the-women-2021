@@ -6,7 +6,7 @@ parceria com a [Se Candidate, Mulher!](https://secandidatemulher.com.br/).
 
 Para saber mais sobre a empresa, leia o [FAQ](#FAQ)
 
-## Requisitos
+## Requisitos Instruct
 
 * Possuir uma conta no GitHub
 * Navegador Chrome ou Firefox
