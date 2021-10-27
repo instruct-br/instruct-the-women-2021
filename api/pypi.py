@@ -26,7 +26,7 @@ def latest_version(package_name):
 
     r = requests.get(f'https://pypi.org/pypi/{package_name}/json')
     if r.status_code == 404:
-        return "None"
+        return None
     else:
         r = r.json()
         return list(r['releases'].keys())[-1]
