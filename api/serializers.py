@@ -33,7 +33,7 @@ class PackageSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError({"error": "One or more packages doesn't exist"})
         else:
             last = latest_version(data["name"])
-            if last == "None":
+            if last == None:
                 raise serializers.ValidationError({"error": "One or more packages doesn't exist"})
             else:
                 data['version'] = last
